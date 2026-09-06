@@ -1,8 +1,9 @@
 import { createClient } from '@supabase/supabase-js';
 
-// Supabase 환경 설정 (Vercel 배포 시 환경 변수로 주입되거나 로컬 .env 지원)
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || '';
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
+// Supabase 환경 설정 (Vercel 환경 변수 우선, 기본값으로 프로젝트 연결)
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || 'https://ejlpxwflsacdjiobfnsj.supabase.co';
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVqbHB4d2Zsc2FjZGppb2JmbnNqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODg2MTc2NjYsImV4cCI6MjEwNDE5MzY2Nn0.FPgqEDAQmqpTNaNvrTR6fDOM1oVUhm7aCIkxQp52ink';
+
 
 export const isSupabaseConfigured = Boolean(
   supabaseUrl && 
